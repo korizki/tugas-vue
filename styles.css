@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+body{
+    padding: 2em 10%;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.tambah{
+    background: cornflowerblue;
+    color: white;
+    padding: 0.7em 1em;;
+    border: 1px solid cornflowerblue;
+    border-radius: 0.4em;
+    transition: all 0.3s;
+}
+.tambah:hover{
+    cursor: pointer;
+    background: rgb(65, 96, 153);
+}
+.formsec{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+label{
+    margin-bottom: 0.3em;
+}
+input{
+    padding: 0.7em;
+    border: 1px solid rgb(230,230,230);
+    border-radius: 0.4em;
+}
+form{
+    display: flex;
+    gap: 1em;
+    margin: 1em 0;
+}
+.formsec>button{
+    display: inline-block;
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 0.7em 1em;
+    border-radius: 0.3em;
+}
+h4{
+    color: crimson
+}
+.right{
+    text-align:right ;
+    font-size: 1.2em;
+    font-weight: 600;
+}

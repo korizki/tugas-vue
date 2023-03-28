@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Vue.js</title>
+    <link rel="stylesheet" href="./styles.css"></link>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div class="center" id="app">
+        <h2>{{message}}</h2>
+        <button @click="addNewItem" class="tambah">Tambah</button>
+        <h4>Anda memiliki {{listItem.length}} item.</h4>
+        <div v-for="(item, index) in listItem">
+            <form @submit="handleSubmit($event, index)" >
+                <div class="formsec">
+                    <label>Product Name {{index+1}}</label>
+                    <input type="text" v-model="item.name" placeholder="Enter product name"/>
+                </div>
+                <div class="formsec">
+                    <label>Quantity</label>
+                    <input type="number" v-model="item.quantity" @input="handleChange(item)" placeholder="Enter product name"/>
+                </div>
+                <div class="formsec">
+                    <label>Price </label>
+                    <input type="number" v-model="item.price" @input="item.total = item.price * item.quantity" placeholder="Enter product name"/>
+                </div>
+                <div class="formsec">
+                    <label>Total Price </label>
+                    <input type="number" v-model="item.total" placeholder="Enter product name"/>
+                </div>
+                <div class="formsec">
+                    <button >Delete</button>
+                </div>
+            </form>
+        </div>
+        <div class="formsec">
+            <label>Total Purchase / Grand Total</label>
+            <input class="right" type="number" :value="totalPrice" disabled/>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
